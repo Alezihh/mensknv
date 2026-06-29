@@ -781,7 +781,7 @@ function Offer() {
               ))}
             </ul>
             <a
-              href="https://pay.kirvano.com/c4c49b72-dd7d-412d-b3e9-6480a35e5dd5"
+              href="https://checkout.ticto.app/OB5D896E3"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-4 border border-border text-[11px] font-semibold tracking-[0.28em] uppercase text-foreground hover:bg-surface-2 transition-colors"
@@ -828,7 +828,7 @@ function Offer() {
                 ))}
               </ul>
               <a
-                href="https://pay.kirvano.com/434f6d9f-a741-4203-a71d-40ef5328b185"
+                href="https://checkout.ticto.app/O3B306F20"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center px-6 py-4 bg-ice text-primary-foreground text-[11px] font-semibold tracking-[0.28em] uppercase hover:bg-silver transition-colors"
