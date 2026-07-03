@@ -730,6 +730,12 @@ const INCLUDES = [
   "Atualizações futuras",
 ];
 
+const PRO_INCLUDES = [
+  ...INCLUDES,
+  "Suporte prioritário",
+  "Acesso antecipado a novidades",
+];
+
 function Offer() {
   return (
     <section id="oferta" className="py-28 sm:py-40 relative overflow-hidden">
@@ -760,17 +766,17 @@ function Offer() {
           </ul>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-px bg-border border border-border">
-          {/* Plano Mensal */}
-          <motion.div {...fadeUp} className="bg-surface p-8 sm:p-10 text-left flex flex-col">
-            <div className="eyebrow mb-4 text-muted-foreground">Mensal</div>
+        <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 items-start">
+          {/* Plano Vitalício */}
+          <motion.div {...fadeUp} className="bg-surface p-8 sm:p-10 text-left flex flex-col border border-border">
+            <div className="eyebrow mb-4 text-muted-foreground">Vitalício</div>
             <div className="flex items-baseline gap-1 mb-1">
               <span className="font-display text-5xl sm:text-6xl">R$</span>
               <span className="font-display text-5xl sm:text-6xl">19</span>
               <span className="font-display text-3xl text-silver">,90</span>
             </div>
             <div className="text-xs text-muted-foreground tracking-wider mb-8">
-              por mês · cancele quando quiser
+              pagamento único · acesso vitalício
             </div>
             <ul className="space-y-3 mb-10 flex-1">
               {INCLUDES.map((i) => (
@@ -781,46 +787,45 @@ function Offer() {
               ))}
             </ul>
             <a
-              href="https://checkout.ticto.app/OB5D896E3"
+              href="https://pay.kirvano.com/0fd446a5-aee5-4dd5-a2a0-bd8e1a9bd254"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-4 border border-border text-[11px] font-semibold tracking-[0.28em] uppercase text-foreground hover:bg-surface-2 transition-colors"
             >
-              Assinar mensal
+              Quero acesso vitalício
             </a>
           </motion.div>
 
-          {/* Plano Anual */}
-          <motion.div {...fadeUp} className="bg-surface-2 p-8 sm:p-10 text-left flex flex-col relative">
+          {/* Plano Vitalício Completo */}
+          <motion.div
+            {...fadeUp}
+            className="relative bg-surface-2 p-10 sm:p-12 text-left flex flex-col border-2 border-silver shadow-[0_0_50px_-10px_rgba(184,184,184,0.4)] sm:-my-4 sm:scale-[1.05] z-10"
+          >
             <div
               aria-hidden
               className="absolute inset-0 pointer-events-none opacity-40"
               style={{
                 background:
-                  "radial-gradient(ellipse at top right, rgba(184,184,184,0.14), transparent 60%)",
+                  "radial-gradient(ellipse at top right, rgba(184,184,184,0.18), transparent 60%)",
               }}
             />
             <div className="relative">
               <div className="flex items-center justify-between mb-4">
-                <span className="eyebrow silver-gradient">Anual</span>
+                <span className="eyebrow silver-gradient">Vitalício Completo</span>
                 <span className="text-[10px] font-semibold tracking-[0.22em] uppercase bg-foreground text-background px-2.5 py-1">
-                  Economize 62%
+                  Mais completo
                 </span>
               </div>
               <div className="flex items-baseline gap-1 mb-1">
-                <span className="font-display text-5xl sm:text-6xl silver-gradient">R$</span>
-                <span className="font-display text-5xl sm:text-6xl silver-gradient">89</span>
-                <span className="font-display text-3xl text-silver">,90</span>
+                <span className="font-display text-6xl sm:text-7xl silver-gradient">R$</span>
+                <span className="font-display text-6xl sm:text-7xl silver-gradient">29</span>
+                <span className="font-display text-4xl text-silver">,90</span>
               </div>
-              <div className="text-xs text-muted-foreground tracking-wider mb-1">
-                por ano · equivale a R$&nbsp;7,49/mês
-              </div>
-              <div className="flex items-center gap-2 mb-8">
-                <span className="text-xs text-muted-foreground line-through font-light">R$ 238,80</span>
-                <span className="text-xs text-silver font-medium">no plano mensal</span>
+              <div className="text-xs text-muted-foreground tracking-wider mb-8">
+                pagamento único · acesso vitalício + bônus exclusivos
               </div>
               <ul className="space-y-3 mb-10 flex-1">
-                {INCLUDES.map((i) => (
+                {PRO_INCLUDES.map((i) => (
                   <li key={i} className="flex items-center gap-3 text-sm font-light">
                     <span className="text-silver font-display">—</span>
                     {i}
@@ -828,12 +833,12 @@ function Offer() {
                 ))}
               </ul>
               <a
-                href="https://checkout.ticto.app/O3B306F20"
+                href="https://pay.kirvano.com/8d7803fb-0690-44af-aa24-3ced5f41670c"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center px-6 py-4 bg-ice text-primary-foreground text-[11px] font-semibold tracking-[0.28em] uppercase hover:bg-silver transition-colors"
               >
-                Assinar anual
+                Quero o vitalício completo
                 <span className="ml-3 inline-block h-px w-4 bg-primary-foreground transition-all group-hover:w-8" />
               </a>
             </div>
