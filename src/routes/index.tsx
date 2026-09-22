@@ -41,7 +41,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Mais de 12.000 figurinhas, frases e elementos para transformar fotos simples em Stories muito mais bonitos. Acesso a partir de R$19,90.",
+          "Mais de 12.000 figurinhas, frases e elementos para transformar fotos simples em Stories muito mais bonitos. Acesso a partir de R$29,90/mês.",
       },
       { property: "og:title", content: "Men's Studio — Figurinhas para Stories" },
       {
@@ -265,11 +265,11 @@ function Hero() {
           </div>
 
           <p className="mt-5 text-sm text-muted-foreground">
-            A partir de <strong className="text-foreground">R$19,90</strong> · pagamento único
+            A partir de <strong className="text-foreground">R$29,90/mês</strong>
           </p>
 
           <div className="mt-5 flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 text-[10px] sm:text-[11px] tracking-wider uppercase text-muted-foreground/80">
-            <span>Pagamento único</span>
+            <span>Cancele quando quiser</span>
             <span className="opacity-40">•</span>
             <span>Acesso imediato</span>
             <span className="opacity-40">•</span>
@@ -564,8 +564,8 @@ function FirstOffer() {
         </motion.ul>
 
         <motion.div {...fadeUp} className="mt-8">
-          <div className="font-display text-4xl sm:text-5xl">A partir de R$19,90</div>
-          <div className="text-xs text-muted-foreground tracking-wider mt-1">pagamento único</div>
+          <div className="font-display text-4xl sm:text-5xl">A partir de R$29,90</div>
+          <div className="text-xs text-muted-foreground tracking-wider mt-1">por mês</div>
         </motion.div>
 
         <motion.div {...fadeUp} className="mt-8">
@@ -783,19 +783,19 @@ function Features() {
   );
 }
 
-const INCLUDES = [
-  "Stories prontos",
-  "Frases premium",
-  "Vídeos lifestyle",
-  "Wallpapers exclusivos",
-  "Elementos visuais",
-  "Atualizações futuras",
+const PLAN_FEATURES = [
+  "Stories prontos para Instagram",
+  "Frases e citações premium",
+  "Elementos e ícones exclusivos",
+  "Vídeos e templates para academia, trabalho, lifestyle, rotina e música",
+  "Wallpapers premium para perfil e capas",
+  "Acesso direto pelo celular, com atualizações constantes",
+  "Suporte prioritário",
+  "Acesso antecipado a novidades",
 ];
 
-const PRO_INCLUDES = [...INCLUDES, "Suporte prioritário", "Acesso antecipado a novidades"];
-
-const BASIC_CHECKOUT_URL = "https://pay.kirvano.com/0fd446a5-aee5-4dd5-a2a0-bd8e1a9bd254";
-const COMPLETE_CHECKOUT_URL = "https://pay.kirvano.com/8d7803fb-0690-44af-aa24-3ced5f41670c";
+const MONTHLY_CHECKOUT_URL = "https://checkout.ticto.app/OB5D896E3";
+const ANNUAL_CHECKOUT_URL = "https://checkout.ticto.app/O3B306F20";
 
 function Offer() {
   return (
@@ -808,94 +808,104 @@ function Offer() {
             "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(184,184,184,0.08), transparent 70%)",
         }}
       />
-      <div className="relative max-w-3xl mx-auto px-6 sm:px-10 text-center">
-        <SectionLabel>Planos</SectionLabel>
-        <motion.h2 {...fadeUp} className="font-display text-3xl sm:text-5xl leading-[1.1] mb-14">
-          Garanta seu acesso ao Men&rsquo;s Studio.
-        </motion.h2>
+      <div className="relative max-w-5xl mx-auto px-6 sm:px-10">
+        <div className="text-center mb-14">
+          <SectionLabel>Planos</SectionLabel>
+          <motion.h2 {...fadeUp} className="font-display text-3xl sm:text-5xl leading-[1.1]">
+            Tudo que você recebe.
+          </motion.h2>
+        </div>
 
-        {/* Primary plan */}
-        <motion.div
-          {...scaleIn}
-          className="relative bg-surface-2 p-8 sm:p-12 text-left border-2 border-silver shadow-[0_0_50px_-10px_rgba(184,184,184,0.4)]"
-        >
-          <div
-            aria-hidden
-            className="absolute inset-0 pointer-events-none opacity-40"
-            style={{
-              background:
-                "radial-gradient(ellipse at top right, rgba(184,184,184,0.18), transparent 60%)",
-            }}
-          />
-          <div className="relative">
-            <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
-              <span className="eyebrow silver-gradient">Men&rsquo;s Studio Completo</span>
-              <span className="text-[10px] font-semibold tracking-[0.22em] uppercase bg-foreground text-background px-2.5 py-1">
-                Mais escolhido
-              </span>
-            </div>
-            <div className="flex items-baseline gap-1 mb-1">
-              <span className="font-display text-6xl sm:text-7xl silver-gradient">R$</span>
-              <span className="font-display text-6xl sm:text-7xl silver-gradient">29</span>
-              <span className="font-display text-4xl text-silver">,90</span>
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-start">
+          {/* Monthly plan */}
+          <motion.div
+            {...fadeUp}
+            className="bg-surface-2 p-8 sm:p-10 text-left border border-border"
+          >
+            <span className="eyebrow">Mensal</span>
+            <div className="flex items-baseline gap-1 mt-4 mb-1">
+              <span className="font-display text-5xl sm:text-6xl">R$</span>
+              <span className="font-display text-5xl sm:text-6xl">29</span>
+              <span className="font-display text-3xl text-muted-foreground">,90</span>
             </div>
             <div className="text-xs text-muted-foreground tracking-wider mb-8">
-              pagamento único · acesso vitalício + bônus exclusivos
+              por mês · sem fidelidade
             </div>
-            <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 mb-10">
-              {PRO_INCLUDES.map((i) => (
-                <li key={i} className="flex items-center gap-3 text-sm font-light">
+            <ul className="space-y-3 mb-10">
+              {PLAN_FEATURES.map((f) => (
+                <li key={f} className="flex items-start gap-3 text-sm font-light text-muted-foreground">
                   <span className="text-silver font-display">—</span>
-                  {i}
+                  {f}
                 </li>
               ))}
             </ul>
             <Cta
-              ctaId="final_offer_completo"
+              ctaId="final_offer_mensal"
               position="final_offer"
-              planId="completo"
+              planId="mensal"
               price={29.9}
               checkout
-              href={COMPLETE_CHECKOUT_URL}
-              className="w-full sm:w-auto"
+              href={MONTHLY_CHECKOUT_URL}
+              variant="ghost"
+              className="w-full justify-center"
             >
-              Quero o acesso completo
+              Assinar mensal
             </Cta>
-          </div>
-        </motion.div>
+          </motion.div>
 
-        {/* Secondary plan — deliberately understated */}
-        <motion.div
-          {...fadeUp}
-          className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 border border-border px-6 py-5 text-left"
-        >
-          <div>
-            <div className="text-sm text-muted-foreground font-light">
-              Prefiro somente o acesso básico
-            </div>
-            <div className="text-xs text-muted-foreground/70 mt-1">
-              Vitalício · R$19,90 · pagamento único
-            </div>
-          </div>
-          <a
-            href={BASIC_CHECKOUT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => {
-              const params: CtaTrackParams = {
-                cta_id: "final_offer_basico",
-                cta_position: "final_offer",
-                plan_id: "basico",
-                price: 19.9,
-              };
-              trackCtaClick(params);
-              trackBeginCheckout(params);
-            }}
-            className="text-xs font-semibold tracking-[0.22em] uppercase text-foreground/80 hover:text-foreground underline underline-offset-4 shrink-0"
+          {/* Annual plan — highlighted */}
+          <motion.div
+            {...scaleIn}
+            className="relative bg-surface-2 p-8 sm:p-10 text-left border-2 border-silver shadow-[0_0_50px_-10px_rgba(184,184,184,0.4)]"
           >
-            Acessar plano básico
-          </a>
-        </motion.div>
+            <div
+              aria-hidden
+              className="absolute inset-0 pointer-events-none opacity-40"
+              style={{
+                background:
+                  "radial-gradient(ellipse at top right, rgba(184,184,184,0.18), transparent 60%)",
+              }}
+            />
+            <div className="relative">
+              <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+                <span className="eyebrow silver-gradient">Anual</span>
+                <span className="text-[10px] font-semibold tracking-[0.22em] uppercase bg-foreground text-background px-2.5 py-1">
+                  Mais pedido
+                </span>
+              </div>
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="font-display text-5xl sm:text-6xl silver-gradient">R$</span>
+                <span className="font-display text-5xl sm:text-6xl silver-gradient">97</span>
+                <span className="font-display text-3xl text-silver">,90</span>
+              </div>
+              <div className="text-xs text-muted-foreground tracking-wider">
+                por ano · equivale a R$8,16/mês
+              </div>
+              <div className="text-xs text-muted-foreground/60 mb-8 mt-1">
+                <span className="line-through">R$358,80</span> no plano mensal
+              </div>
+              <ul className="space-y-3 mb-10">
+                {PLAN_FEATURES.map((f) => (
+                  <li key={f} className="flex items-start gap-3 text-sm font-light">
+                    <span className="text-silver font-display">—</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <Cta
+                ctaId="final_offer_anual"
+                position="final_offer"
+                planId="anual"
+                price={97.9}
+                checkout
+                href={ANNUAL_CHECKOUT_URL}
+                className="w-full justify-center"
+              >
+                Liberar meu acesso agora <span className="text-silver ml-2">→</span>
+              </Cta>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
@@ -923,7 +933,7 @@ function Guarantee() {
 const FAQ = [
   {
     q: "Como funciona o acesso?",
-    a: "Após a compra, você recebe acesso imediato e vitalício a toda biblioteca, incluindo todas as futuras atualizações.",
+    a: "Após a assinatura, você recebe acesso imediato a toda a biblioteca, incluindo todas as futuras atualizações, enquanto sua assinatura estiver ativa.",
   },
   {
     q: "Posso usar no celular?",
@@ -938,8 +948,8 @@ const FAQ = [
     a: "Não. Os stories, frases e elementos são prontos para usar — você só precisa publicar.",
   },
   {
-    q: "É um pagamento único?",
-    a: "Sim. Pagamento único, sem mensalidades, sem renovação. Acesso vitalício a tudo.",
+    q: "Como funciona a cobrança?",
+    a: "Você escolhe entre o plano mensal (R$29,90) ou anual (R$97,90), renovado automaticamente a cada ciclo. Cancele quando quiser.",
   },
 ];
 
@@ -981,7 +991,7 @@ function FinalCTA() {
           Quero acessar as figurinhas
         </Cta>
         <div className="mt-4 text-xs text-muted-foreground tracking-wider">
-          A partir de R$19,90 · pagamento único
+          A partir de R$29,90/mês
         </div>
       </div>
     </section>
@@ -1046,7 +1056,7 @@ function StickyCta() {
       <div className="bg-background/95 backdrop-blur-xl border-t border-border px-4 py-3 flex items-center justify-between gap-3">
         <div className="text-xs leading-tight">
           <div className="font-display text-sm">Men&rsquo;s Studio</div>
-          <div className="text-muted-foreground">a partir de R$19,90</div>
+          <div className="text-muted-foreground">a partir de R$29,90/mês</div>
         </div>
         <a
           href="#oferta"
